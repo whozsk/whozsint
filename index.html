@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whoz OSINT Methods Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F172A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B7280;
+        }
+        .category-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .category-content.open {
+            max-height: 10000px;
+        }
+        #searchInput {
+            transition: all 0.3s ease;
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #60A5FA;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+        }
+        .category-box {
+            border: 1px solid #2D3748;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen">
+    <div class="container mx-auto p-6">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-100">Whoz OSINT Methods Dashboard</h1>
+            <p class="text-gray-400 mt-2">Explore a comprehensive collection of OSINT tools and methods</p>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tools..."
+                class="mt-4 w-full max-w-md p-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-200 focus:ring-2 focus:ring-blue-500"
+                onkeyup="searchTools()"
+            >
+        </header>
+
+        <main>
+            <section class="space-y-6">
+                <!-- AI & Automation-Driven OSINT -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">AI & Automation-Driven OSINT (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.blackbird.ai/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Blackbird.AI</h3>
+                                <p class="text-sm text-gray-400">Disinfo detection and narrative risk scoring.</p>
+                            </a>
+                            <a href="https://www.primer.ai/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Primer Command</h3>
+                                <p class="text-sm text-gray-400">AI analysis for open-source reporting.</p>
+                            </a>
+                            <a href="https://www.darktrace.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Darktrace PREVENT</h3>
+                                <p class="text-sm text-gray-400">AI for threat anticipation in OSINT.</p>
+                            </a>
+                            <a href="https://hyphe.medialab.sciences-po.fr/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hyphe</h3>
+                                <p class="text-sm text-gray-400">Builds semantic OSINT networks from URLs.</p>
+                            </a>
+                            <a href="https://www.luminoso.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Luminoso</h3>
+                                <p class="text-sm text-gray-400">AI for contextual language analysis in media.</p>
+                            </a>
+                            <a href="https://zeek.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Zeek (Bro IDS)</h3>
+                                <p class="text-sm text-gray-400">Network-level OSINT from passive data.</p>
+                            </a>
+                            <a href="https://www.diffbot.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Diffbot</h3>
+                                <p class="text-sm text-gray-400">AI web scraping and entity extraction.</p>
+                            </a>
+                            <a href="https://www.hive.ai/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">HIVE.AI</h3>
+                                <p class="text-sm text-gray-400">AI moderation and content classification for social media.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Android (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.skyeye" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SkEye</h3>
+                                <p class="text-sm text-gray-400">Satellite and star tracking tool useful in geolocation.</p>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.gpsphotoviewer" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GPS Photo Viewer</h3>
+                                <p class="text-sm text-gray-400">View photo metadata including EXIF/GPS info.</p>
+                            </a>
+                            <a href="https://wigle.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WiGLE WiFi Wardriving</h3>
+                                <p class="text-sm text-gray-400">Map wireless networks and geolocation.</p>
+                            </a>
+                            <a href="https://www.termux.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Termux</h3>
+                                <p class="text-sm text-gray-400">Run OSINT CLI tools on Android Linux environment.</p>
+                            </a>
+                            <a href="https://github.com/Webbreacher/trape" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Trape (via Termux)</h3>
+                                <p class="text-sm text-gray-400">Remote browser tracking tool.</p>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.netmonitor" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Net Monitor</h3>
+                                <p class="text-sm text-gray-400">Analyze cellular and Wi-Fi networks.</p>
+                            </a>
+                            <a href="https://www.fing.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Fing</h3>
+                                <p class="text-sm text-gray-400">Network scanner and device discovery.</p>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.exifviewer" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">EXIF Viewer</h3>
+                                <p class="text-sm text-gray-400">Inspect image metadata easily on mobile.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Browser Extensions & Plugins -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Browser Extensions & Plugins (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://chrome.google.com/webstore/detail/osint-tool-extension" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT-Tool Extension</h3>
+                                <p class="text-sm text-gray-400">Launch OSINT utilities from any webpage.</p>
+                            </a>
+                            <a href="https://www.invid-project.eu/tools-and-services/invid-verification-plugin/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">InVID Browser Plugin</h3>
+                                <p class="text-sm text-gray-400">Fact-check videos and images.</p>
+                            </a>
+                            <a href="https://www.lightbeam.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Lightbeam</h3>
+                                <p class="text-sm text-gray-400">Visualize third-party trackers on websites.</p>
+                            </a>
+                            <a href="https://www.ghostery.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Ghostery</h3>
+                                <p class="text-sm text-gray-400">Detect trackers and analyze site behavior.</p>
+                            </a>
+                            <a href="https://archive.org/web/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Web Archives Search</h3>
+                                <p class="text-sm text-gray-400">Search archived versions of pages.</p>
+                            </a>
+                            <a href="https://hunter.io/chrome" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hunter Extension</h3>
+                                <p class="text-sm text-gray-400">Find emails linked to domains instantly.</p>
+                            </a>
+                            <a href="https://www.shodan.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Shodan Plugin</h3>
+                                <p class="text-sm text-gray-400">Search IP/device data from your browser.</p>
+                            </a>
+                            <a href="https://www.wappalyzer.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Wappalyzer</h3>
+                                <p class="text-sm text-gray-400">Detect site technology stacks from browser.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial or Underground Intelligence Platforms -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Commercial or Underground Intelligence Platforms (4 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.spyzie.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Spyzie</h3>
+                                <p class="text-sm text-gray-400">Mobile tracking and activity logging.</p>
+                            </a>
+                            <a href="https://www.flexispy.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FlexiSPY</h3>
+                                <p class="text-sm text-gray-400">Commercial spyware under scrutiny for abuse.</p>
+                            </a>
+                            <a href="https://www.mspy.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">mSpy</h3>
+                                <p class="text-sm text-gray-400">Marketed for parental control, often misused.</p>
+                            </a>
+                            <a href="#" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">HackingTeam Tools</h3>
+                                <p class="text-sm text-gray-400">Known for state-level espionage deployment.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commonly Abused Free Tools -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Commonly Abused Free Tools (10 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://github.com/laramies/theHarvester" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">theHarvester</h3>
+                                <p class="text-sm text-gray-400">Email and domain reconnaissance, often used in phishing setup.</p>
+                            </a>
+                            <a href="https://github.com/creepy/creepy" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Creepy</h3>
+                                <p class="text-sm text-gray-400">Geolocation extractor from social media images.</p>
+                            </a>
+                            <a href="https://github.com/Megadeth1337/GHunt" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GHunt</h3>
+                                <p class="text-sm text-gray-400">OSINT targeting Google accounts and services.</p>
+                            </a>
+                            <a href="https://github.com/joeylane/skiptracer" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Skiptracer</h3>
+                                <p class="text-sm text-gray-400">CLI tool to collect phone, social, and email data.</p>
+                            </a>
+                            <a href="https://github.com/telesploit/telesploit" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Telesploit</h3>
+                                <p class="text-sm text-gray-400">Extract metadata and social graphs from Telegram.</p>
+                            </a>
+                            <a href="https://github.com/rapid7/metasploit-framework" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Social-Engineer Toolkit (SET)</h3>
+                                <p class="text-sm text-gray-400">Automates social engineering attacks.</p>
+                            </a>
+                            <a href="https://github.com/Webbreacher/trape" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Trape</h3>
+                                <p class="text-sm text-gray-400">Browser tracking and real-time geolocation.</p>
+                            </a>
+                            <a href="https://github.com/1N3/BlackEye" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Blackeye</h3>
+                                <p class="text-sm text-gray-400">Phishing landing page automation tool.</p>
+                            </a>
+                            <a href="https://github.com/kgretzky/evilginx2" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Evilginx</h3>
+                                <p class="text-sm text-gray-400">Advanced phishing with session hijacking.</p>
+                            </a>
+                            <a href="https://github.com/twintproject/twint" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Twint</h3>
+                                <p class="text-sm text-gray-400">Unauthenticated Twitter scraping; heavily used for mass data extraction.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dark Web Discovery Tools -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Dark Web Discovery Tools (4 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://github.com/jivoi/torbot" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TorBot</h3>
+                                <p class="text-sm text-gray-400">Crawls onion services and builds searchable indexes.</p>
+                            </a>
+                            <a href="https://github.com/lightning/onionscan" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OnionScan</h3>
+                                <p class="text-sm text-gray-400">Checks dark web sites for leaks and fingerprinting data.</p>
+                            </a>
+                            <a href="https://ahmia.fi/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Ahmia</h3>
+                                <p class="text-sm text-gray-400">Search engine for .onion services, used for discovery.</p>
+                            </a>
+                            <a href="https://github.com/candle/candle" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Candle</h3>
+                                <p class="text-sm text-gray-400">Lightweight Tor crawler and indexer.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dark Web Monitoring -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Dark Web Monitoring (4 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.darkowl.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DarkOwl</h3>
+                                <p class="text-sm text-gray-400">Dark web monitoring platform.</p>
+                            </a>
+                            <a href="https://www.echosec.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Echosec Beacon</h3>
+                                <p class="text-sm text-gray-400">Real-time social and dark web monitoring.</p>
+                            </a>
+                            <a href="https://www.flashpoint-intel.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Flashpoint Intelligence</h3>
+                                <p class="text-sm text-gray-400">Commercial threat intelligence and dark web surveillance.</p>
+                            </a>
+                            <a href="https://www.intsights.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IntSights Monitoring</h3>
+                                <p class="text-sm text-gray-400">Enterprise dark web and threat monitoring.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Breach & Identity Monitoring -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Data Breach & Identity Monitoring (7 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://ghostproject.fr/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GhostProject.fr</h3>
+                                <p class="text-sm text-gray-400">Password leak lookup database.</p>
+                            </a>
+                            <a href="https://dehashed.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Dehashed</h3>
+                                <p class="text-sm text-gray-400">Check usernames, emails, IPs in breaches.</p>
+                            </a>
+                            <a href="https://leakcheck.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LeakCheck</h3>
+                                <p class="text-sm text-gray-400">Credential and breach search.</p>
+                            </a>
+                            <a href="https://breachdirectory.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">BreachDirectory.org</h3>
+                                <p class="text-sm text-gray-400">Simple leaked data search engine.</p>
+                            </a>
+                            <a href="https://snusbase.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Snusbase</h3>
+                                <p class="text-sm text-gray-400">Historical breach data explorer.</p>
+                            </a>
+                            <a href="https://hashes.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hashes.org</h3>
+                                <p class="text-sm text-gray-400">Community-driven hash cracking index.</p>
+                            </a>
+                            <a href="https://crackstation.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CrackStation</h3>
+                                <p class="text-sm text-gray-400">Offline wordlists and cracked hashes archive.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disinformation & Content Analysis -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Disinformation & Content Analysis (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://botometer.osome.iu.edu/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Botometer</h3>
+                                <p class="text-sm text-gray-400">Detects social media bot behavior on Twitter.</p>
+                            </a>
+                            <a href="https://www.invid-project.eu/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">InVID WeVerify</h3>
+                                <p class="text-sm text-gray-400">Verifies user-generated video/images.</p>
+                            </a>
+                            <a href="https://mediabiasfactcheck.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Media Bias/Fact Check</h3>
+                                <p class="text-sm text-gray-400">Source reputation and bias checking.</p>
+                            </a>
+                            <a href="https://www.crowdtangle.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CrowdTangle</h3>
+                                <p class="text-sm text-gray-400">Tracks how content spreads on social media.</p>
+                            </a>
+                            <a href="https://hoaxy.osome.iu.edu/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hoaxy</h3>
+                                <p class="text-sm text-gray-400">Visualize how claims spread across Twitter.</p>
+                            </a>
+                            <a href="https://truthnest.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TruthNest</h3>
+                                <p class="text-sm text-gray-400">Advanced Twitter analytics tool.</p>
+                            </a>
+                            <a href="https://legitcheck.app/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LegitCheck</h3>
+                                <p class="text-sm text-gray-400">Verify legitimacy of websites and platforms.</p>
+                            </a>
+                            <a href="https://sourcecheck.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SourceCheck</h3>
+                                <p class="text-sm text-gray-400">Evaluate information source trustworthiness.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Domain & IP Intelligence -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Domain & IP Intelligence (7 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.domaintools.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DomainTools</h3>
+                                <p class="text-sm text-gray-400">DNS, WHOIS, and network infrastructure analytics.</p>
+                            </a>
+                            <a href="https://www.riskiq.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">RiskIQ</h3>
+                                <p class="text-sm text-gray-400">External attack surface mapping.</p>
+                            </a>
+                            <a href="https://www.recordedfuture.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Recorded Future</h3>
+                                <p class="text-sm text-gray-400">Threat intelligence and forecasting suite.</p>
+                            </a>
+                            <a href="https://www.greynoise.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GreyNoise Enterprise</h3>
+                                <p class="text-sm text-gray-400">Internet noise and benign scan context.</p>
+                            </a>
+                            <a href="https://whoisxmlapi.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WhoisXML API</h3>
+                                <p class="text-sm text-gray-400">WHOIS and domain data APIs.</p>
+                            </a>
+                            <a href="https://securitytrails.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SecurityTrails</h3>
+                                <p class="text-sm text-gray-400">Passive DNS, WHOIS, and domain data.</p>
+                            </a>
+                            <a href="https://www.farsightsecurity.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Farsight Security DNSDB</h3>
+                                <p class="text-sm text-gray-400">Historical DNS and domain intelligence.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Verification & Tracing -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Email Verification & Tracing (6 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.emailhippo.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Email Hippo</h3>
+                                <p class="text-sm text-gray-400">Email verification and health score.</p>
+                            </a>
+                            <a href="https://mailtester.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MailTester.com</h3>
+                                <p class="text-sm text-gray-400">Simple SMTP verification tool.</p>
+                            </a>
+                            <a href="https://verifyemailaddress.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VerifyEmailAddress.org</h3>
+                                <p class="text-sm text-gray-400">Syntax and domain checker.</p>
+                            </a>
+                            <a href="https://emailformat.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">EmailFormat.com</h3>
+                                <p class="text-sm text-gray-400">Common email formats by domain.</p>
+                            </a>
+                            <a href="https://mxtoolbox.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MXToolbox Email Tools</h3>
+                                <p class="text-sm text-gray-400">Full suite for tracing and validating email.</p>
+                            </a>
+                            <a href="https://hunter.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hunter Bulk Verifier</h3>
+                                <p class="text-sm text-gray-400">Upload lists for mass validation.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facial Recognition & Biometrics -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Facial Recognition & Biometrics (5 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://pimeyes.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">PimEyes</h3>
+                                <p class="text-sm text-gray-400">Facial recognition search across the web.</p>
+                            </a>
+                            <a href="https://www.betaface.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Betaface</h3>
+                                <p class="text-sm text-gray-400">Face detection and recognition API.</p>
+                            </a>
+                            <a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Azure Face API</h3>
+                                <p class="text-sm text-gray-400">Face detection and analysis from Microsoft.</p>
+                            </a>
+                            <a href="https://www.ntechlab.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FindFace</h3>
+                                <p class="text-sm text-gray-400">High-accuracy commercial face search.</p>
+                            </a>
+                            <a href="#" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Exif Face Identifier</h3>
+                                <p class="text-sm text-gray-400">Detect faces from image EXIF metadata.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free OSINT Applications -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Free OSINT Applications (10 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://github.com/timhutton/recon-ng" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Recon-ng</h3>
+                                <p class="text-sm text-gray-400">Web-based recon framework for data collection.</p>
+                            </a>
+                            <a href="https://www.spiderfoot.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SpiderFoot</h3>
+                                <p class="text-sm text-gray-400">Fully automated OSINT recon tool.</p>
+                            </a>
+                            <a href="https://github.com/twintproject/twint" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Twint</h3>
+                                <p class="text-sm text-gray-400">Twitter scraping tool without using Twitter API.</p>
+                            </a>
+                            <a href="https://github.com/Datalux/Osintgram" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Osintgram</h3>
+                                <p class="text-sm text-gray-400">Instagram automation and scraping tool.</p>
+                            </a>
+                            <a href="https://github.com/joeylane/skiptracer" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Skiptracer</h3>
+                                <p class="text-sm text-gray-400">Gather phone, email, social info using CLI.</p>
+                            </a>
+                            <a href="https://inteltechniques.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IntelTechniques Tools Suite</h3>
+                                <p class="text-sm text-gray-400">Collection of browser-based OSINT shortcuts.</p>
+                            </a>
+                            <a href="https://github.com/mxrch/maigret" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Maigret</h3>
+                                <p class="text-sm text-gray-400">Username checker across 500+ services.</p>
+                            </a>
+                            <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Sherlock</h3>
+                                <p class="text-sm text-gray-400">Social media username checker.</p>
+                            </a>
+                            <a href="https://whatsmyname.app/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WhatsMyName</h3>
+                                <p class="text-sm text-gray-400">Detect usernames across hundreds of websites.</p>
+                            </a>
+                            <a href="https://github.com/secsi/h8mail" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">H8mail</h3>
+                                <p class="text-sm text-gray-400">Email OSINT and breach lookup CLI tool.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free OSINT Tools -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Free OSINT Tools (194 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://osintframework.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT Framework</h3>
+                                <p class="text-sm text-gray-400">Curated collection of OSINT resources.</p>
+                            </a>
+                            <a href="https://publicwww.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">PublicWWW</h3>
+                                <p class="text-sm text-gray-400">Source code search across millions of sites.</p>
+                            </a>
+                            <a href="https://dorksearch.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DorkSearch</h3>
+                                <p class="text-sm text-gray-400">Search engine dorking tool.</p>
+                            </a>
+                            <a href="https://commoncrawl.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CommonCrawl</h3>
+                                <p class="text-sm text-gray-400">Open web crawl dataset useful for large-scale OSINT.</p>
+                            </a>
+                            <a href="https://exiftool.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ExifTool</h3>
+                                <p class="text-sm text-gray-400">Extract metadata from media and files.</p>
+                            </a>
+                            <a href="https://foca.pro/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FOCA</h3>
+                                <p class="text-sm text-gray-400">Metadata extraction from public documents.</p>
+                            </a>
+                            <a href="https://github.com/pdfminer/pdfminer.six" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">PDF-Parser</h3>
+                                <p class="text-sm text-gray-400">Analyze structure and content of PDF files.</p>
+                            </a>
+                            <a href="https://www.metadata2go.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Metadata2Go</h3>
+                                <p class="text-sm text-gray-400">Online metadata viewer for images, documents, etc.</p>
+                            </a>
+                            <a href="https://github.com/shmilylty/dnscan" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Dnscan</h3>
+                                <p class="text-sm text-gray-400">DNS subdomain scanner.</p>
+                            </a>
+                            <a href="https://github.com/aboul3la/Sublist3r" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Sublist3r</h3>
+                                <p class="text-sm text-gray-400">Subdomain enumeration tool.</p>
+                            </a>
+                            <a href="https://dnsdumpster.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DNSDumpster</h3>
+                                <p class="text-sm text-gray-400">Visual recon of domain infrastructure.</p>
+                            </a>
+                            <a href="https://viewdns.info/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ViewDNS</h3>
+                                <p class="text-sm text-gray-400">Web-based tools for DNS and IP information.</p>
+                            </a>
+                            <a href="https://osint.link/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT.link</h3>
+                                <p class="text-sm text-gray-400">Launchpad for many web OSINT tools.</p>
+                            </a>
+                            <a href="https://leakix.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LeakIX</h3>
+                                <p class="text-sm text-gray-400">Search for indexed web service leaks.</p>
+                            </a>
+                            <a href="https://opensanctions.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenSanctions</h3>
+                                <p class="text-sm text-gray-400">Sanctions, PEPs, and criminal entities.</p>
+                            </a>
+                            <a href="https://whoisology.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Whoisology</h3>
+                                <p class="text-sm text-gray-400">WHOIS history database for domains.</p>
+                            </a>
+                            <a href="https://dnslytics.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DNSlytics</h3>
+                                <p class="text-sm text-gray-400">IP, ASN, and domain DNS insights.</p>
+                            </a>
+                            <a href="https://threatminer.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ThreatMiner</h3>
+                                <p class="text-sm text-gray-400">IOC and passive DNS database.</p>
+                            </a>
+                            <a href="https://certdb.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CertDB</h3>
+                                <p class="text-sm text-gray-400">TLS certificate transparency search engine.</p>
+                            </a>
+                            <a href="https://vulners.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Vulners</h3>
+                                <p class="text-sm text-gray-400">Vulnerability database and OSINT recon.</p>
+                            </a>
+                            <a href="https://intelx.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IntelligenceX</h3>
+                                <p class="text-sm text-gray-400">Deep web, leaks, and government data indexer.</p>
+                            </a>
+                            <a href="https://www.shodan.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Shodan Monitor</h3>
+                                <p class="text-sm text-gray-400">Asset tracking and alert system.</p>
+                            </a>
+                            <a href="https://www.circl.lu/projects/osint/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CIRCL OSINT Tools</h3>
+                                <p class="text-sm text-gray-400">Free forensic and investigation tools.</p>
+                            </a>
+                            <a href="https://hacked-emails.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hacked-Emails</h3>
+                                <p class="text-sm text-gray-400">Search for compromised email addresses.</p>
+                            </a>
+                            <a href="https://leakix.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LeakIX API</h3>
+                                <p class="text-sm text-gray-400">Programmatic access to web leaks.</p>
+                            </a>
+                            <a href="https://dark.fail/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Dark.fail</h3>
+                                <p class="text-sm text-gray-400">Darknet site status and directories.</p>
+                            </a>
+                            <a href="https://github.com/danielmiessler/SecLists" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SecLists</h3>
+                                <p class="text-sm text-gray-400">Attack surface wordlists for discovery/dictionary attacks.</p>
+                            </a>
+                            <a href="https://github.com/osintcombine" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT Combine Tools</h3>
+                                <p class="text-sm text-gray-400">Free government-focused OSINT scripts.</p>
+                            </a>
+                            <a href="https://github.com/rossja/Twitter-Archiver" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Twitter Archiver</h3>
+                                <p class="text-sm text-gray-400">Track tweets via keywords.</p>
+                            </a>
+                            <a href="https://github.com/ArchiveBox/ArchiveBox" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ArchiveBox</h3>
+                                <p class="text-sm text-gray-400">Self-hosted way to save and index sites permanently.</p>
+                            </a>
+                            <a href="https://github.com/tinfoleak/tinfoleak" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Tinfoleak</h3>
+                                <p class="text-sm text-gray-400">Twitter user metadata analysis tool.</p>
+                            </a>
+                            <a href="https://github.com/laramies/OSRFramework" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSRFramework</h3>
+                                <p class="text-sm text-gray-400">Username, email, and domain investigation toolset.</p>
+                            </a>
+                            <a href="https://osint.lol/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT.LOL</h3>
+                                <p class="text-sm text-gray-400">Simple web-based OSINT index with categories.</p>
+                            </a>
+                            <a href="https://github.com/pehunter/pehunter" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">PE Hunter</h3>
+                                <p class="text-sm text-gray-400">Scan executable files for digital forensics.</p>
+                            </a>
+                            <a href="https://www.ipvoid.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IPvoid</h3>
+                                <p class="text-sm text-gray-400">IP reputation and blacklist check.</p>
+                            </a>
+                            <a href="https://www.urlvoid.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">URLvoid</h3>
+                                <p class="text-sm text-gray-400">URL reputation scanner.</p>
+                            </a>
+                            <a href="https://fraudguard.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FraudGuard</h3>
+                                <p class="text-sm text-gray-400">IP reputation and threat classification.</p>
+                            </a>
+                            <a href="https://www.riskiq.com/community/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">RiskIQ Community</h3>
+                                <p class="text-sm text-gray-400">Threat infrastructure search.</p>
+                            </a>
+                            <a href="https://visualping.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Visualping</h3>
+                                <p class="text-sm text-gray-400">Webpage monitoring for changes.</p>
+                            </a>
+                            <a href="https://censys.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Censys CLI</h3>
+                                <p class="text-sm text-gray-400">Command-line OSINT asset discovery.</p>
+                            </a>
+                            <a href="https://www.ssllabs.com/ssltest/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SSL Labs Test</h3>
+                                <p class="text-sm text-gray-400">Analyze HTTPS configs and certs.</p>
+                            </a>
+                            <a href="https://inteltechniques.com/tools/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IntelTechniques Desktop Tools</h3>
+                                <p class="text-sm text-gray-400">Custom-built scripts for recon.</p>
+                            </a>
+                            <a href="https://countryinfoapi.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CountryInfo API</h3>
+                                <p class="text-sm text-gray-400">Look up country profiles and region data.</p>
+                            </a>
+                            <a href="https://emailchecker.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">EmailChecker</h3>
+                                <p class="text-sm text-gray-400">Bulk email verification platform.</p>
+                            </a>
+                            <a href="https://webrtcleak.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WebRTC Leak Test</h3>
+                                <p class="text-sm text-gray-400">Check browser IP exposure.</p>
+                            </a>
+                            <a href="https://localmonero.co/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LocalMonero Check</h3>
+                                <p class="text-sm text-gray-400">Track shady vendor info via usernames.</p>
+                            </a>
+                            <a href="https://www.mapillary.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Mapillary</h3>
+                                <p class="text-sm text-gray-400">Street-level imagery from around the world.</p>
+                            </a>
+                            <a href="https://www.openrouteservice.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenRouteService</h3>
+                                <p class="text-sm text-gray-400">Geospatial analysis from addresses.</p>
+                            </a>
+                            <a href="https://scihub.copernicus.eu/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Copernicus Open Hub</h3>
+                                <p class="text-sm text-gray-400">Earth observation satellite data.</p>
+                            </a>
+                            <a href="https://www.windy.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Windy</h3>
+                                <p class="text-sm text-gray-400">Satellite weather and pressure map overlays.</p>
+                            </a>
+                            <a href="https://transparencyreport.google.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Google Transparency Report</h3>
+                                <p class="text-sm text-gray-400">Domain and country-level monitoring.</p>
+                            </a>
+                            <a href="https://ublacklist.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">uBlacklist</h3>
+                                <p class="text-sm text-gray-400">Personal search filtering tool.</p>
+                            </a>
+                            <a href="https://suncalc.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SunCalc</h3>
+                                <p class="text-sm text-gray-400">Solar path tracking useful for geolocation verification.</p>
+                            </a>
+                            <a href="https://vizhub.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VizHub</h3>
+                                <p class="text-sm text-gray-400">Data visualization platform for storytelling with OSINT.</p>
+                            </a>
+                            <a href="https://nvd.nist.gov/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">NVD</h3>
+                                <p class="text-sm text-gray-400">National Vulnerability Database (US Gov).</p>
+                            </a>
+                            <a href="https://cvedetails.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CVE Details</h3>
+                                <p class="text-sm text-gray-400">Public vulnerability reference database.</p>
+                            </a>
+                            <a href="https://attack.mitre.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MITRE ATT&CK Navigator</h3>
+                                <p class="text-sm text-gray-400">Framework for adversary tactics and behaviors.</p>
+                            </a>
+                            <a href="https://github.com/ttpmap/ttpmap" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TTPMap</h3>
+                                <p class="text-sm text-gray-400">Threat tactic visualization tool.</p>
+                            </a>
+                            <a href="https://cctvmap.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CCTVMap</h3>
+                                <p class="text-sm text-gray-400">Maps of public surveillance camera networks.</p>
+                            </a>
+                            <a href="https://ioverlander.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">iOverlander</h3>
+                                <p class="text-sm text-gray-400">User-generated geolocation data, useful for travel recon.</p>
+                            </a>
+                            <a href="https://www.marinetraffic.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VHF Marine Traffic Map</h3>
+                                <p class="text-sm text-gray-400">Track boats by radio signal.</p>
+                            </a>
+                            <a href="https://www.adsbexchange.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ADSB Exchange</h3>
+                                <p class="text-sm text-gray-400">Unfiltered aircraft tracking data.</p>
+                            </a>
+                            <a href="https://www.spotcrime.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SpotCrime</h3>
+                                <p class="text-sm text-gray-400">Community-generated crime mapping.</p>
+                            </a>
+                            <a href="https://www.crimemapping.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CrimeMapping.com</h3>
+                                <p class="text-sm text-gray-400">U.S. law enforcement-provided incident tracker.</p>
+                            </a>
+                            <a href="https://www.geonames.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GeoNames</h3>
+                                <p class="text-sm text-gray-400">Global geographical database with placenames and coordinates.</p>
+                            </a>
+                            <a href="https://www.topozone.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TopoZone</h3>
+                                <p class="text-sm text-gray-400">U.S. topographic map archive.</p>
+                            </a>
+                            <a href="https://openaerialmap.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenAerialMap</h3>
+                                <p class="text-sm text-gray-400">Satellite and drone image repository.</p>
+                            </a>
+                            <a href="https://geolytica.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Geolytica</h3>
+                                <p class="text-sm text-gray-400">Postal code and demographic lookup (Canada).</p>
+                            </a>
+                            <a href="https://regexr.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">RegExr</h3>
+                                <p class="text-sm text-gray-400">Visual regex testing and reverse-engineering tool.</p>
+                            </a>
+                            <a href="https://www.wikitree.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Wikitree</h3>
+                                <p class="text-sm text-gray-400">Genealogy database for identity linkage.</p>
+                            </a>
+                            <a href="https://www.familysearch.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FamilySearch</h3>
+                                <p class="text-sm text-gray-400">Ancestry and public records data.</p>
+                            </a>
+                            <a href="https://www.findagrave.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Find a Grave</h3>
+                                <p class="text-sm text-gray-400">Cemetery search linked to birth and death dates.</p>
+                            </a>
+                            <a href="https://www.marinetraffic.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MarineTraffic</h3>
+                                <p class="text-sm text-gray-400">Global vessel tracking in real time.</p>
+                            </a>
+                            <a href="https://www.radarbox.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">RadarBox</h3>
+                                <p class="text-sm text-gray-400">Live air traffic monitoring tool.</p>
+                            </a>
+                            <a href="https://www.flightaware.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FlightAware</h3>
+                                <p class="text-sm text-gray-400">Aviation analytics and historical flight data.</p>
+                            </a>
+                            <a href="https://earthdata.nasa.gov/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Earthdata (NASA)</h3>
+                                <p class="text-sm text-gray-400">Earth science and satellite datasets.</p>
+                            </a>
+                            <a href="https://www.wikimapia.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Wikimapia</h3>
+                                <p class="text-sm text-gray-400">Collaborative geographic information database.</p>
+                            </a>
+                            <a href="https://suncalc.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Suncalc.net</h3>
+                                <p class="text-sm text-gray-400">Verify time, shadows and lighting using map-based sun positions.</p>
+                            </a>
+                            <a href="https://studio.foursquare.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Foursquare Studio</h3>
+                                <p class="text-sm text-gray-400">Geospatial data analysis and visualization.</p>
+                            </a>
+                            <a href="https://www.icij.org/investigations/offshore-leaks/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ICIJ Offshore Leaks Database</h3>
+                                <p class="text-sm text-gray-400">Search shell companies and offshore networks.</p>
+                            </a>
+                            <a href="https://aleph.occrp.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OCCRP Aleph</h3>
+                                <p class="text-sm text-gray-400">Investigative data platform for public records.</p>
+                            </a>
+                            <a href="https://enigma.com/public-data" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Enigma Public Data</h3>
+                                <p class="text-sm text-gray-400">Aggregated U.S. government data.</p>
+                            </a>
+                            <a href="https://github.com/dorking/dorking" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Google Dork Generator</h3>
+                                <p class="text-sm text-gray-400">Pre-built Google search payloads for OSINT.</p>
+                            </a>
+                            <a href="https://mxtoolbox.com/MXLookup.aspx" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MX Lookup</h3>
+                                <p class="text-sm text-gray-400">MX record resolver with abuse flagging.</p>
+                            </a>
+                            <a href="https://email-checker.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Email-Checker.net</h3>
+                                <p class="text-sm text-gray-400">Quick format and domain checks.</p>
+                            </a>
+                            <a href="https://github.com/telegram-osint-bot" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Telegram OSINT Bot</h3>
+                                <p class="text-sm text-gray-400">Telegram scraper for group/user data.</p>
+                            </a>
+                            <a href="https://darkwebmonitor.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Dark Web Monitor</h3>
+                                <p class="text-sm text-gray-400">Indexing and alerts for .onion domains.</p>
+                            </a>
+                            <a href="https://onion.link/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Onion.link</h3>
+                                <p class="text-sm text-gray-400">Tor2web proxy for browsing .onion links without Tor.</p>
+                            </a>
+                            <a href="https://www.browserleaks.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">BrowserLeaks</h3>
+                                <p class="text-sm text-gray-400">Browser fingerprint analysis and WebRTC/IP leaks.</p>
+                            </a>
+                            <a href="https://github.com/projectdiscovery/subfinder" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Subfinder</h3>
+                                <p class="text-sm text-gray-400">Subdomain discovery using passive sources.</p>
+                            </a>
+                            <a href="https://github.com/projectdiscovery/dnsx" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Dnsx</h3>
+                                <p class="text-sm text-gray-400">Fast DNS probe for attack surface mapping.</p>
+                            </a>
+                            <a href="https://github.com/tomnomnom/gau" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Gau</h3>
+                                <p class="text-sm text-gray-400">Collect URLs indexed by web archive engines.</p>
+                            </a>
+                            <a href="https://github.com/lc/gitleaks" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GitLeaks-API</h3>
+                                <p class="text-sm text-gray-400">Automated secrets scanning from GitHub repos.</p>
+                            </a>
+                            <a href="https://leakix.net/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">LeakIX CLI</h3>
+                                <p class="text-sm text-gray-400">Scan IPs for exposed web ports/data leaks.</p>
+                            </a>
+                            <a href="https://github.com/projectdiscovery/nuclei" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ProjectDiscovery Nuclei</h3>
+                                <p class="text-sm text-gray-400">Template-based vulnerability scanner.</p>
+                            </a>
+                            <a href="https://github.com/digitalocean/doctl" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">DigitalOcean Recon</h3>
+                                <p class="text-sm text-gray-400">Pull domain/IP info from DigitalOcean assets.</p>
+                            </a>
+                            <a href="https://tailscale.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Tailscale</h3>
+                                <p class="text-sm text-gray-400">Secure OSINT access tunnels via encrypted mesh VPN.</p>
+                            </a>
+                            <a href="https://tineye.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TinEye Multicolor Search</h3>
+                                <p class="text-sm text-gray-400">Reverse image + color-based filtering.</p>
+                            </a>
+                            <a href="https://rsshub.app/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">RSSHub</h3>
+                                <p class="text-sm text-gray-400">Flexible RSS feed generator for any website.</p>
+                            </a>
+                            <a href="https://followerwonk.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Followerwonk</h3>
+                                <p class="text-sm text-gray-400">Twitter bio search and analysis.</p>
+                            </a>
+                            <a href="https://github.com/waybackrobots" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Waybackrobots</h3>
+                                <p class="text-sm text-gray-400">Extract past disallowed directories from robots.txt.</p>
+                            </a>
+                            <a href="https://github.com/emailpermutator" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">EmailPermutator+</h3>
+                                <p class="text-sm text-gray-400">Generate common permutations of emails.</p>
+                            </a>
+                            <a href="https://github.com/yasat/yasat" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">YASAT</h3>
+                                <p class="text-sm text-gray-400">Yet Another Security Audit Tool (local web checks).</p>
+                            </a>
+                            <a href="https://hackertarget.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">HackerTarget Recon Tools</h3>
+                                <p class="text-sm text-gray-400">WHOIS, subdomain, traceroute from browser.</p>
+                            </a>
+                            <a href="https://apktool.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ApkTool</h3>
+                                <p class="text-sm text-gray-400">Decompile and analyze Android apps.</p>
+                            </a>
+                            <a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MobSF</h3>
+                                <p class="text-sm text-gray-400">Mobile Security Framework for APK/iOS analysis.</p>
+                            </a>
+                            <a href="https://exodus-privacy.eu.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Exodus Privacy</h3>
+                                <p class="text-sm text-gray-400">Trackers and permissions audit for Android apps.</p>
+                            </a>
+                            <a href="https://www.virustotal.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VirusTotal Mobile</h3>
+                                <p class="text-sm text-gray-400">Scan Android apps for malware and abuse.</p>
+                            </a>
+                            <a href="https://www.appbrain.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">AppBrain</h3>
+                                <p class="text-sm text-gray-400">Android app market analysis and stats.</p>
+                            </a>
+                            <a href="https://www.aptoide.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Aptoide Intel</h3>
+                                <p class="text-sm text-gray-400">Alternative Android app marketplace browsing.</p>
+                            </a>
+                            <a href="https://github.com/netchaser/netchaser" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Netchaser</h3>
+                                <p class="text-sm text-gray-400">Passive Wi-Fi and BLE signal collection (wardriving).</p>
+                            </a>
+                            <a href="https://github.com/qrdecoder" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">QRDecoder</h3>
+                                <p class="text-sm text-gray-400">Extract QR code data and metadata.</p>
+                            </a>
+                            <a href="https://developer.chrome.com/docs/devtools/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Inspect Element</h3>
+                                <p class="text-sm text-gray-400">Basic web scraping through browser tools.</p>
+                            </a>
+                            <a href="https://reqbin.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ReqBin</h3>
+                                <p class="text-sm text-gray-400">Online HTTP header and API request tester.</p>
+                            </a>
+                            <a href="https://httptoolkit.tech/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">HTTP Toolkit</h3>
+                                <p class="text-sm text-gray-400">Analyze API traffic for OSINT.</p>
+                            </a>
+                            <a href="https://asnlookup.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ASN Info</h3>
+                                <p class="text-sm text-gray-400">Lookup of ASN, IP blocks, and peers.</p>
+                            </a>
+                            <a href="https://otx.alienvault.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OTX Browser Plugin</h3>
+                                <p class="text-sm text-gray-400">AlienVault IOC tool inside browser.</p>
+                            </a>
+                            <a href="https://0xtools.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">0xTools</h3>
+                                <p class="text-sm text-gray-400">Web tools for hashing, encoding, fingerprinting.</p>
+                            </a>
+                            <a href="https://emailvalidator.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">EmailValidator.io</h3>
+                                <p class="text-sm text-gray-400">Email deliverability and DNS checks.</p>
+                            </a>
+                            <a href="https://mxtoolbox.com/blacklists.aspx" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MXToolbox Blacklist</h3>
+                                <p class="text-sm text-gray-400">IP/domain abuse monitoring.</p>
+                            </a>
+                            <a href="https://whoxy.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WHOXY</h3>
+                                <p class="text-sm text-gray-400">WHOIS + ownership metadata service.</p>
+                            </a>
+                            <a href="https://www.google.com/chromeuxreport/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Chrome UX Report</h3>
+                                <p class="text-sm text-gray-400">Google performance dataset by domain.</p>
+                            </a>
+                            <a href="https://www.opensecrets.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenSecrets</h3>
+                                <p class="text-sm text-gray-400">U.S. political donor OSINT.</p>
+                            </a>
+                            <a href="https://www.followthemoney.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FollowTheMoney.org</h3>
+                                <p class="text-sm text-gray-400">Campaign and lobbying data.</p>
+                            </a>
+                            <a href="https://www.companycheck.co.uk/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Company Check (UK)</h3>
+                                <p class="text-sm text-gray-400">Corporate filing data for UK entities.</p>
+                            </a>
+                            <a href="https://opencorporates.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenCorporates API</h3>
+                                <p class="text-sm text-gray-400">Global corporate registries.</p>
+                            </a>
+                            <a href="https://github.com/osintcombine/youtube-scraper" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT Combine YouTube Scraper</h3>
+                                <p class="text-sm text-gray-400">Public video intel tool.</p>
+                            </a>
+                            <a href="https://transparencyreport.google.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Google Transparency Report APIs</h3>
+                                <p class="text-sm text-gray-400">Legal request tracking.</p>
+                            </a>
+                            <a href="https://publicdata.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">PublicData.io</h3>
+                                <p class="text-sm text-gray-400">Aggregate US gov and community data.</p>
+                            </a>
+                            <a href="https://hashlookup.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Hashlookup</h3>
+                                <p class="text-sm text-gray-400">Online hash intelligence for malware and files.</p>
+                            </a>
+                            <a href="https://xifrat.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Xifrat</h3>
+                                <p class="text-sm text-gray-400">Spanish metadata forensics suite.</p>
+                            </a>
+                            <a href="https://www.polonious.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Polonious Link Explorer</h3>
+                                <p class="text-sm text-gray-400">Entity relationship diagramming.</p>
+                            </a>
+                            <a href="https://civio.es/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Civio</h3>
+                                <p class="text-sm text-gray-400">Spanish public sector transparency data.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geolocation & Imagery -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Geolocation & Imagery (10 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.google.com/earth/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Google Earth Pro</h3>
+                                <p class="text-sm text-gray-400">High-res satellite imagery and 3D mapping.</p>
+                            </a>
+                            <a href="https://www.openstreetmap.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenStreetMap</h3>
+                                <p class="text-sm text-gray-400">Crowdsourced maps with detailed POIs.</p>
+                            </a>
+                            <a href="https://www.mapillary.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Mapillary</h3>
+                                <p class="text-sm text-gray-400">Street-level imagery from around the world.</p>
+                            </a>
+                            <a href="https://www.geospy.ai/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GeoSpy AI</h3>
+                                <p class="text-sm text-gray-400">AI-based image geolocation estimator.</p>
+                            </a>
+                            <a href="https://www.wikimapia.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Wikimapia</h3>
+                                <p class="text-sm text-gray-400">Collaborative geographic information database.</p>
+                            </a>
+                            <a href="https://suncalc.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">SunCalc</h3>
+                                <p class="text-sm text-gray-400">Solar path tracking for geolocation verification.</p>
+                            </a>
+                            <a href="https://www.openaerialmap.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OpenAerialMap</h3>
+                                <p class="text-sm text-gray-400">Satellite and drone image repository.</p>
+                            </a>
+                            <a href="https://scihub.copernicus.eu/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Copernicus Open Hub</h3>
+                                <p class="text-sm text-gray-400">Earth observation satellite data.</p>
+                            </a>
+                            <a href="https://www.windy.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Windy</h3>
+                                <p class="text-sm text-gray-400">Satellite weather and pressure map overlays.</p>
+                            </a>
+                            <a href="https://www.geonames.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GeoNames</h3>
+                                <p class="text-sm text-gray-400">Global geographical database with placenames and coordinates.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Device Analysis -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Mobile Device Analysis (6 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.cellebrite.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Cellebrite UFED</h3>
+                                <p class="text-sm text-gray-400">Forensic mobile data extraction.</p>
+                            </a>
+                            <a href="https://www.oxygen-forensic.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Oxygen Forensic Suite</h3>
+                                <p class="text-sm text-gray-400">Mobile device data recovery tool.</p>
+                            </a>
+                            <a href="https://www.magnetforensics.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Magnet AXIOM</h3>
+                                <p class="text-sm text-gray-400">Cloud and mobile forensic analysis.</p>
+                            </a>
+                            <a href="https://apktool.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ApkTool</h3>
+                                <p class="text-sm text-gray-400">Decompile and analyze Android apps.</p>
+                            </a>
+                            <a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MobSF</h3>
+                                <p class="text-sm text-gray-400">Mobile Security Framework for APK/iOS analysis.</p>
+                            </a>
+                            <a href="https://exodus-privacy.eu.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Exodus Privacy</h3>
+                                <p class="text-sm text-gray-400">Trackers and permissions audit for Android apps.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Analysis -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Network Analysis (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.wireshark.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Wireshark</h3>
+                                <p class="text-sm text-gray-400">Packet capture and protocol analysis.</p>
+                            </a>
+                            <a href="https://www.netresec.com/?page=NetworkMiner" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">NetworkMiner</h3>
+                                <p class="text-sm text-gray-400">Passive network forensic tool.</p>
+                            </a>
+                            <a href="https://www.nmap.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Nmap</h3>
+                                <p class="text-sm text-gray-400">Network discovery and port scanning.</p>
+                            </a>
+                            <a href="https://www.fing.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Fing</h3>
+                                <p class="text-sm text-gray-400">Network scanner and device discovery.</p>
+                            </a>
+                            <a href="https://www.netscout.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Netscout Arbor</h3>
+                                <p class="text-sm text-gray-400">DDoS and traffic analysis platform.</p>
+                            </a>
+                            <a href="https://www.tshark.dev/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Tshark</h3>
+                                <p class="text-sm text-gray-400">CLI-based packet analysis from Wireshark team.</p>
+                            </a>
+                            <a href="https://zeek.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Zeek</h3>
+                                <p class="text-sm text-gray-400">Network-level OSINT from passive data.</p>
+                            </a>
+                            <a href="https://www.cloudshark.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CloudShark</h3>
+                                <p class="text-sm text-gray-400">Cloud-based packet capture analysis.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- People Search & Background Checks -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">People Search & Background Checks (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.spokeo.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Spokeo</h3>
+                                <p class="text-sm text-gray-400">Aggregates public records for people search.</p>
+                            </a>
+                            <a href="https://www.beenverified.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">BeenVerified</h3>
+                                <p class="text-sm text-gray-400">Background checks with court records.</p>
+                            </a>
+                            <a href="https://www.whitepages.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Whitepages</h3>
+                                <p class="text-sm text-gray-400">Phone number and address lookup.</p>
+                            </a>
+                            <a href="https://www.pipl.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Pipl</h3>
+                                <p class="text-sm text-gray-400">Professional identity verification service.</p>
+                            </a>
+                            <a href="https://www.intelius.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Intelius</h3>
+                                <p class="text-sm text-gray-400">People search with criminal history checks.</p>
+                            </a>
+                            <a href="https://www.fastpeoplesearch.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FastPeopleSearch</h3>
+                                <p class="text-sm text-gray-400">Free basic lookup for U.S. residents.</p>
+                            </a>
+                            <a href="https://www.truepeoplesearch.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TruePeopleSearch</h3>
+                                <p class="text-sm text-gray-400">Free address and phone number search.</p>
+                            </a>
+                            <a href="https://www.familysearch.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">FamilySearch</h3>
+                                <p class="text-sm text-gray-400">Ancestry and public records data.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Analysis -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Social Media Analysis (10 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://github.com/Datalux/Osintgram" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Osintgram</h3>
+                                <p class="text-sm text-gray-400">Instagram automation and scraping tool.</p>
+                            </a>
+                            <a href="https://github.com/twintproject/twint" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Twint</h3>
+                                <p class="text-sm text-gray-400">Twitter scraping tool without using Twitter API.</p>
+                            </a>
+                            <a href="https://www.crowdtangle.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CrowdTangle</h3>
+                                <p class="text-sm text-gray-400">Tracks how content spreads on social media.</p>
+                            </a>
+                            <a href="https://followerwonk.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Followerwonk</h3>
+                                <p class="text-sm text-gray-400">Twitter bio search and analysis.</p>
+                            </a>
+                            <a href="https://www.social-searcher.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Social Searcher</h3>
+                                <p class="text-sm text-gray-400">Real-time social media keyword monitoring.</p>
+                            </a>
+                            <a href="https://truthnest.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">TruthNest</h3>
+                                <p class="text-sm text-gray-400">Advanced Twitter analytics tool.</p>
+                            </a>
+                            <a href="https://github.com/tinfoleak/tinfoleak" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Tinfoleak</h3>
+                                <p class="text-sm text-gray-400">Twitter user metadata analysis tool.</p>
+                            </a>
+                            <a href="https://github.com/rossja/Twitter-Archiver" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Twitter Archiver</h3>
+                                <p class="text-sm text-gray-400">Track tweets via keywords.</p>
+                            </a>
+                            <a href="https://github.com/telegram-osint-bot" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Telegram OSINT Bot</h3>
+                                <p class="text-sm text-gray-400">Telegram scraper for group/user data.</p>
+                            </a>
+                            <a href="https://github.com/osintcombine/youtube-scraper" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">OSINT Combine YouTube Scraper</h3>
+                                <p class="text-sm text-gray-400">Public video intel tool.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Threat Intelligence -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Threat Intelligence (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://otx.alienvault.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">AlienVault OTX</h3>
+                                <p class="text-sm text-gray-400">Community-driven threat intelligence platform.</p>
+                            </a>
+                            <a href="https://www.virustotal.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VirusTotal</h3>
+                                <p class="text-sm text-gray-400">File, URL, and IP reputation analysis.</p>
+                            </a>
+                            <a href="https://www.threatconnect.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ThreatConnect</h3>
+                                <p class="text-sm text-gray-400">Enterprise threat intelligence orchestration.</p>
+                            </a>
+                            <a href="https://www.recordedfuture.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Recorded Future</h3>
+                                <p class="text-sm text-gray-400">Threat intelligence and forecasting suite.</p>
+                            </a>
+                            <a href="https://www.greynoise.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">GreyNoise Enterprise</h3>
+                                <p class="text-sm text-gray-400">Internet noise and benign scan context.</p>
+                            </a>
+                            <a href="https://threatminer.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ThreatMiner</h3>
+                                <p class="text-sm text-gray-400">IOC and passive DNS database.</p>
+                            </a>
+                            <a href="https://intelx.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">IntelligenceX</h3>
+                                <p class="text-sm text-gray-400">Deep web, leaks, and government data indexer.</p>
+                            </a>
+                            <a href="https://attack.mitre.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">MITRE ATT&CK Navigator</h3>
+                                <p class="text-sm text-gray-400">Framework for adversary tactics and behaviors.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Username & Social Media Tracking -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Username & Social Media Tracking (6 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Sherlock</h3>
+                                <p class="text-sm text-gray-400">Social media username checker.</p>
+                            </a>
+                            <a href="https://github.com/mxrch/maigret" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Maigret</h3>
+                                <p class="text-sm text-gray-400">Username checker across 500+ services.</p>
+                            </a>
+                            <a href="https://whatsmyname.app/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WhatsMyName</h3>
+                                <p class="text-sm text-gray-400">Detect usernames across hundreds of websites.</p>
+                            </a>
+                            <a href="https://namechk.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Namechk</h3>
+                                <p class="text-sm text-gray-400">Username availability across platforms.</p>
+                            </a>
+                            <a href="https://usersearch.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">UserSearch</h3>
+                                <p class="text-sm text-gray-400">Social media profile lookup by username.</p>
+                            </a>
+                            <a href="https://checkusernames.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">CheckUsernames</h3>
+                                <p class="text-sm text-gray-400">Simple username search across social sites.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualizations -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Visualizations (5 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://maltego.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Maltego</h3>
+                                <p class="text-sm text-gray-400">Interactive OSINT link analysis and graphing.</p>
+                            </a>
+                            <a href="https://gephi.org/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Gephi</h3>
+                                <p class="text-sm text-gray-400">Open-source network visualization tool.</p>
+                            </a>
+                            <a href="https://www.polonious.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Polonious Link Explorer</h3>
+                                <p class="text-sm text-gray-400">Entity relationship diagramming.</p>
+                            </a>
+                            <a href="https://vizhub.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">VizHub</h3>
+                                <p class="text-sm text-gray-400">Data visualization platform for storytelling with OSINT.</p>
+                            </a>
+                            <a href="https://www.linkurious.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Linkurious</h3>
+                                <p class="text-sm text-gray-400">Enterprise graph visualization for OSINT.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Scraping & Data Collection -->
+                <div class="bg-gray-900 rounded-xl shadow-lg overflow-hidden category-box">
+                    <button class="w-full text-left p-4 bg-gray-800 hover:bg-gray-700 transition-colors expandable" onclick="toggleCategory(this)">
+                        <h2 class="text-xl font-semibold text-gray-200">Web Scraping & Data Collection (8 tools)</h2>
+                    </button>
+                    <div class="category-content p-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                            <a href="https://www.scrapingbee.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ScrapingBee</h3>
+                                <p class="text-sm text-gray-400">Web scraping API with proxy rotation.</p>
+                            </a>
+                            <a href="https://www.octoparse.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Octoparse</h3>
+                                <p class="text-sm text-gray-400">Visual web scraping without coding.</p>
+                            </a>
+                            <a href="https://www.parsehub.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">ParseHub</h3>
+                                <p class="text-sm text-gray-400">Free visual web scraping tool.</p>
+                            </a>
+                            <a href="https://www.webscraper.io/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">WebScraper.io</h3>
+                                <p class="text-sm text-gray-400">Browser extension for scraping.</p>
+                            </a>
+                            <a href="https://www.diffbot.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Diffbot</h3>
+                                <p class="text-sm text-gray-400">AI web scraping and entity extraction.</p>
+                            </a>
+                            <a href="https://github.com/scrapy/scrapy" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Scrapy</h3>
+                                <p class="text-sm text-gray-400">Python-based web scraping framework.</p>
+                            </a>
+                            <a href="https://www.apify.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Apify</h3>
+                                <p class="text-sm text-gray-400">Web scraping and automation platform.</p>
+                            </a>
+                            <a href="https://www.zyte.com/" target="_blank" class="tool-card bg-gray-800 p-4 rounded-lg shadow-md hover:text-blue-400">
+                                <h3 class="text-lg font-medium">Zyte</h3>
+                                <p class="text-sm text-gray-400">Enterprise-grade web scraping service.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleCategory(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('open');
+        }
+
+        function searchTools() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(input) || description.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
