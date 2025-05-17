@@ -42,6 +42,38 @@
         }
     </style>
 </head>
+<audio id="bg-audio" preload="auto" hidden>
+    <source src="snowing.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const audioElement = document.getElementById('bg-audio');
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const track = audioContext.createMediaElementSource(audioElement);
+        const gainNode = audioContext.createGain();
+        gainNode.gain.setValueAtTime(0.001, audioContext.currentTime);
+        track.connect(gainNode).connect(audioContext.destination);
+
+        function fadeInAndPlay() {
+            audioElement.play();
+            gainNode.gain.exponentialRampToValueAtTime(0.1, audioContext.currentTime + 4);
+        }
+
+        fadeInAndPlay();
+        audioElement.addEventListener('play', () => {
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+        });
+
+        audioElement.play().catch(() => {
+            document.body.addEventListener('click', () => {
+                fadeInAndPlay();
+            }, { once: true });
+        });
+    });
+</script>
 <body class="bg-gray-900 text-gray-200 min-h-screen">
     <div class="container mx-auto p-6">
         <header class="text-center mb-8">
